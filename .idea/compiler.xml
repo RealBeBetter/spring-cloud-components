@@ -8,10 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-client" />
         <module name="eureka-server" />
+        <module name="eureka-security-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="eureka-client" target="1.8" />
+      <module name="eureka-security-server" target="1.8" />
       <module name="eureka-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>

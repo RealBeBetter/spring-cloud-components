@@ -1,0 +1,12 @@
+server:
+  port: 8103
+spring:
+  application:
+    name: eureka-client
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      # 配置中心按格式修改注册中心地址 http://${username}:${password}@${hostname}:${port}/eureka/
+      defaultZone: http://real:123456@localhost:8004/eureka/
