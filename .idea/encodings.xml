@@ -7,6 +7,8 @@
     <file url="file://$PROJECT_DIR$/eureka-security-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hystrix-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hystrix-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/load-balance-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/load-balance-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/user-service/src/main/java" charset="UTF-8" />
