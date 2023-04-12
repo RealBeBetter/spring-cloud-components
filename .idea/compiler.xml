@@ -7,9 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ribbon-service" />
         <module name="eureka-security-server" />
         <module name="user-service" />
+        <module name="load-balance-service" />
         <module name="eureka-client" />
         <module name="eureka-server" />
       </profile>
@@ -18,7 +18,7 @@
       <module name="eureka-client" target="1.8" />
       <module name="eureka-security-server" target="1.8" />
       <module name="eureka-server" target="1.8" />
-      <module name="ribbon-service" target="1.8" />
+      <module name="load-balance-service" target="1.8" />
       <module name="user-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>

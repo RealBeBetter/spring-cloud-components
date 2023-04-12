@@ -10,10 +10,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @EnableDiscoveryClient
 @SpringBootApplication
-public class RibbonServiceApplication {
+public class LoadBalanceServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RibbonServiceApplication.class, args);
+        SpringApplication.run(LoadBalanceServiceApplication.class, args);
     }
 
 }

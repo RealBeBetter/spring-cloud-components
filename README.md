@@ -23,3 +23,33 @@ eureka:
   server: #eureka服务端配置
     enable-self-preservation: false #关闭eureka服务端的保护机制
 ```
+
+#### Ribbon 常用配置
+
+**全局配置**
+
+```yaml
+ribbon:
+  ConnectTimeout: 1000 #服务请求连接超时时间（毫秒）
+  ReadTimeout: 3000 #服务请求处理超时时间（毫秒）
+  OkToRetryOnAllOperations: true #对超时请求启用重试机制
+  MaxAutoRetriesNextServer: 1 #切换重试实例的最大个数
+  MaxAutoRetries: 1 # 切换实例后重试最大次数
+  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #修改负载均衡算法
+```
+
+**指定服务配置**
+
+```yaml
+user-service:
+  ribbon:
+    ConnectTimeout: 1000 #服务请求连接超时时间（毫秒）
+    ReadTimeout: 3000 #服务请求处理超时时间（毫秒）
+    OkToRetryOnAllOperations: true #对超时请求启用重试机制
+    MaxAutoRetriesNextServer: 1 #切换重试实例的最大个数
+    MaxAutoRetries: 1 # 切换实例后重试最大次数
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #修改负载均衡算法
+```
+
+> 因为 Ribbon 在新版本中已经去除，使用 load-balancer 进行替代，参考：https://blog.csdn.net/qq_39363204/article/details/124357014
+
