@@ -9,8 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="hystrix-service" />
         <module name="eureka-security-server" />
-        <module name="user-service" />
         <module name="load-balance-service" />
+        <module name="user-service" />
         <module name="eureka-client" />
         <module name="eureka-server" />
       </profile>
