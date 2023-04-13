@@ -2,7 +2,7 @@ server:
   port: 8301
 spring:
   application:
-    name: ribbon-service
+    name: load-balance-service
 eureka:
   client:
     register-with-eureka: true

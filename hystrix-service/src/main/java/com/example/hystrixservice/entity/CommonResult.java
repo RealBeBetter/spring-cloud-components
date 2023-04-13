@@ -13,6 +13,9 @@ public class CommonResult<T> {
     private String message;
     private Integer code;
 
+    public CommonResult() {
+    }
+
     public CommonResult(T data, String message, Integer code) {
         this.data = data;
         this.message = message;
