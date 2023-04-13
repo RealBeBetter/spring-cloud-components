@@ -9,6 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @author Real
  * @date 2023/04/12 23:28
  */
+@EnableCircuitBreaker
 @EnableDiscoveryClient
 @SpringBootApplication
 public class HystrixServiceApplication {

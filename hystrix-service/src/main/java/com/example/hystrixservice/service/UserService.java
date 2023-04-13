@@ -2,6 +2,7 @@ package com.example.hystrixservice.service;
 
 import com.example.hystrixservice.entity.CommonResult;
 import com.example.hystrixservice.entity.User;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,6 +25,7 @@ public class UserService {
     @Value("${service-url.user-service}")
     private String userServiceUrl;
 
+    @HystrixCommand(fallbackMethod = "getDefaultUser")
     public CommonResult getUser(Long id) {
         return restTemplate.getForObject(userServiceUrl + "/user/{1}", CommonResult.class, id);
     }
@@ -33,14 +35,20 @@ public class UserService {
         return new CommonResult<>(defaultUser);
     }
 
+    @HystrixCommand(fallbackMethod = "getDefaultUser",
+            commandKey = "getUserCommand",
+            groupKey = "getUserGroup",
+            threadPoolKey = "getUserThreadPool")
     public CommonResult getUserCommand(@PathVariable Long id) {
         return restTemplate.getForObject(userServiceUrl + "/user/{1}", CommonResult.class, id);
     }
 
+    @HystrixCommand(fallbackMethod = "getDefaultUserException", ignoreExceptions = {NullPointerException.class})
     public CommonResult getUserException(Long id) {
+        int nullPointerSign = 2;
         if (id == 1) {
             throw new IndexOutOfBoundsException();
-        } else if (id == 2) {
+        } else if (id == nullPointerSign) {
             throw new NullPointerException();
         }
 
