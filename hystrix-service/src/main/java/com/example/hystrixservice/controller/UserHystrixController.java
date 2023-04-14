@@ -2,6 +2,7 @@ package com.example.hystrixservice.controller;
 
 import com.example.hystrixservice.entity.CommonResult;
 import com.example.hystrixservice.service.UserService;
+import com.netflix.hystrix.strategy.concurrency.HystrixRequestContext;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,6 +36,30 @@ public class UserHystrixController {
     @GetMapping("/testException/{id}")
     public CommonResult testException(@PathVariable Long id) {
         return userService.getUserException(id);
+    }
+
+    @GetMapping("/testCache/{id}")
+    public CommonResult testCache(@PathVariable Long id) {
+        HystrixRequestContext context = HystrixRequestContext.initializeContext();
+        try {
+            CommonResult userCache = userService.getUserCache(id);
+            CommonResult userCache1 = userService.getUserCache(id);
+            CommonResult userCache2 = userService.getUserCache(id);
+            log.info("userCache: {}, userCache1: {}, userCache2: {}", userCache, userCache1, userCache2);
+            return new CommonResult("操作成功", 200);
+            // 执行 Hystrix 命令
+        } finally {
+            context.shutdown();
+        }
+    }
+
+    @GetMapping("/testRemoveCache/{id}")
+    public CommonResult testRemoveCache(@PathVariable Long id) {
+        CommonResult userCachePre = userService.getUserCache(id);
+        CommonResult commonResult = userService.removeCache(id);
+        CommonResult userCacheNex = userService.getUserCache(id);
+        log.info("userCachePre: {}, userCacheNex: {}, commonResult: {}", userCachePre, userCacheNex, commonResult);
+        return new CommonResult("操作成功", 200);
     }
 
 }

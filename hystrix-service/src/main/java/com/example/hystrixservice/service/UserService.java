@@ -3,6 +3,8 @@ package com.example.hystrixservice.service;
 import com.example.hystrixservice.entity.CommonResult;
 import com.example.hystrixservice.entity.User;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheRemove;
+import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheResult;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -59,6 +61,36 @@ public class UserService {
         log.error("getDefaultUserException id:{},throwable class:{}", id, e.getClass());
         User defaultUser = new User(-2L, "defaultUserException", "123456");
         return new CommonResult<>(defaultUser);
+    }
+
+    /**
+     * 开启 Hystrix 请求缓存
+     *
+     * @param id id
+     * @return {@link CommonResult}
+     */
+    @CacheResult(cacheKeyMethod = "getCacheKey")
+    @HystrixCommand(fallbackMethod = "getDefaultUser", commandKey = "getUserCache")
+    public CommonResult getUserCache(Long id) {
+        log.info("getUserCache id:{}", id);
+        return restTemplate.getForObject(userServiceUrl + "/user/{1}", CommonResult.class, id);
+    }
+
+    /**
+     * 为缓存生成 key 的方法
+     *
+     * @param id id
+     * @return {@link String}
+     */
+    public String getCacheKey(Long id) {
+        return String.valueOf(id);
+    }
+
+    @CacheRemove(commandKey = "getUserCache", cacheKeyMethod = "getCacheKey")
+    @HystrixCommand
+    public CommonResult removeCache(Long id) {
+        log.info("removeCache id:{}", id);
+        return restTemplate.postForObject(userServiceUrl + "/user/delete/{1}", null, CommonResult.class, id);
     }
 
 }
