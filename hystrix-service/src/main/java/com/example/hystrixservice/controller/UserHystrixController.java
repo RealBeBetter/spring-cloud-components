@@ -1,14 +1,19 @@
 package com.example.hystrixservice.controller;
 
+import cn.hutool.core.thread.ThreadUtil;
 import com.example.hystrixservice.entity.CommonResult;
+import com.example.hystrixservice.entity.User;
 import com.example.hystrixservice.service.UserService;
 import com.netflix.hystrix.strategy.concurrency.HystrixRequestContext;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.concurrent.Future;
 
 /**
  * @author Real
@@ -59,6 +64,20 @@ public class UserHystrixController {
         CommonResult commonResult = userService.removeCache(id);
         CommonResult userCacheNex = userService.getUserCache(id);
         log.info("userCachePre: {}, userCacheNex: {}, commonResult: {}", userCachePre, userCacheNex, commonResult);
+        return new CommonResult("操作成功", 200);
+    }
+
+    @SneakyThrows
+    @GetMapping("/testCollapser")
+    public CommonResult testCollapser() {
+        Future<User> future1 = userService.getUserFuture(1L);
+        Future<User> future2 = userService.getUserFuture(2L);
+        future1.get();
+        future2.get();
+
+        ThreadUtil.safeSleep(200);
+        Future<User> future3 = userService.getUserFuture(3L);
+        future3.get();
         return new CommonResult("操作成功", 200);
     }
 
