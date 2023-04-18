@@ -111,3 +111,22 @@ hystrix:
     HystrixThreadPoolKey: #将default换成HystrixThreadPoolKey
       coreSize: 10
 ```
+
+#### Open Feign 常用配置
+
+```yaml
+feign:
+  hystrix:
+    enabled: true #在Feign中开启Hystrix
+  compression:
+    request:
+      enabled: false #是否对请求进行GZIP压缩
+      mime-types: text/xml,application/xml,application/json #指定压缩的请求数据类型
+      min-request-size: 2048 #超过该大小的请求会被压缩
+    response:
+      enabled: false #是否对响应进行GZIP压缩
+logging:
+  level:
+    # 配置 service 包下的 client 的日志打印级别为 debug
+    com.example.feignservice.service: debug
+```

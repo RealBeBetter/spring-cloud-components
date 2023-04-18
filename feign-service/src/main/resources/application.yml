@@ -13,3 +13,8 @@ feign:
   hystrix:
     # 在 Feign 中开启 Hystrix
     enabled: true
+
+logging:
+  level:
+    # 配置 service 包下的 client 的日志打印级别为 debug
+    com.example.feignservice.service: debug
