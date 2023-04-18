@@ -1,4 +1,4 @@
-package com.example.userservice.entity;
+package com.example.feignservice.entity;
 
 import lombok.Data;
 
