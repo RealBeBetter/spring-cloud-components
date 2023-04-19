@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
  * @since 2023-04-18 12:11
  */
 @SuppressWarnings("rawtypes")
-@FeignClient(value = "user-service", fallback = UserFallbackServiceImpl.class)
-public interface UserService {
+@FeignClient(value = "user-service", fallback = UserFallbackClientImpl.class)
+public interface UserClient {
 
     /**
      * 创建

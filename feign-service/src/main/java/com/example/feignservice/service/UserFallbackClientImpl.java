@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @SuppressWarnings("rawtypes")
-public class UserFallbackServiceImpl implements UserService {
+public class UserFallbackClientImpl implements UserClient {
 
     @Override
     public CommonResult create(User user) {

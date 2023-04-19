@@ -2,7 +2,7 @@ package com.example.feignservice.controller;
 
 import com.example.feignservice.entity.CommonResult;
 import com.example.feignservice.entity.User;
-import com.example.feignservice.service.UserService;
+import com.example.feignservice.service.UserClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -17,31 +17,31 @@ import javax.annotation.Resource;
 public class UserFeignController {
 
     @Resource
-    private UserService userService;
+    private UserClient userClient;
 
     @GetMapping("/{id}")
     public CommonResult getUser(@PathVariable Long id) {
-        return userService.getUser(id);
+        return userClient.getUser(id);
     }
 
     @GetMapping("/getByUsername")
     public CommonResult getByUsername(@RequestParam String username) {
-        return userService.getByUsername(username);
+        return userClient.getByUsername(username);
     }
 
     @PostMapping("/create")
     public CommonResult create(@RequestBody User user) {
-        return userService.create(user);
+        return userClient.create(user);
     }
 
     @PostMapping("/update")
     public CommonResult update(@RequestBody User user) {
-        return userService.update(user);
+        return userClient.update(user);
     }
 
     @PostMapping("/delete/{id}")
     public CommonResult delete(@PathVariable Long id) {
-        return userService.delete(id);
+        return userClient.delete(id);
     }
 
 }
