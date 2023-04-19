@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-components.iml" filepath="$PROJECT_DIR$/spring-cloud-components.iml" />
       <module fileurl="file://$PROJECT_DIR$/turbine-service/turbine-service.iml" filepath="$PROJECT_DIR$/turbine-service/turbine-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-service/user-service.iml" filepath="$PROJECT_DIR$/user-service/user-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul-proxy/zuul-proxy.iml" filepath="$PROJECT_DIR$/zuul-proxy/zuul-proxy.iml" />
     </modules>
   </component>
 </project>

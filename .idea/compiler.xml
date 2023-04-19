@@ -13,6 +13,7 @@
         <module name="load-balance-service" />
         <module name="eureka-client" />
         <module name="hystrix-dashboard" />
+        <module name="zuul-proxy" />
         <module name="user-service" />
         <module name="feign-service" />
         <module name="eureka-server" />
@@ -30,6 +31,7 @@
       <module name="spring-cloud-components" target="1.8" />
       <module name="turbine-service" target="1.8" />
       <module name="user-service" target="1.8" />
+      <module name="zuul-proxy" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
