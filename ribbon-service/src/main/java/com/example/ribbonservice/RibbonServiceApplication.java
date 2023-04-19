@@ -6,14 +6,14 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author wei.song
- * @date 2023/04/12 11:01
+ * @date 2023/04/19 15:08
  */
 @EnableDiscoveryClient
 @SpringBootApplication
-public class LoadBalanceServiceApplication {
+public class RibbonServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LoadBalanceServiceApplication.class, args);
+        SpringApplication.run(RibbonServiceApplication.class, args);
     }
 
 }

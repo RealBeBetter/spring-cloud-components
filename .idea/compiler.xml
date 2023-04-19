@@ -10,10 +10,10 @@
         <module name="turbine-service" />
         <module name="hystrix-service" />
         <module name="eureka-security-server" />
-        <module name="load-balance-service" />
         <module name="eureka-client" />
         <module name="hystrix-dashboard" />
         <module name="zuul-proxy" />
+        <module name="ribbon-service" />
         <module name="user-service" />
         <module name="feign-service" />
         <module name="eureka-server" />
@@ -28,6 +28,7 @@
       <module name="hystrix-dashboard" target="1.8" />
       <module name="hystrix-service" target="1.8" />
       <module name="load-balance-service" target="1.8" />
+      <module name="ribbon-service" target="1.8" />
       <module name="spring-cloud-components" target="1.8" />
       <module name="turbine-service" target="1.8" />
       <module name="user-service" target="1.8" />

@@ -15,6 +15,8 @@
     <file url="file://$PROJECT_DIR$/hystrix-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/load-balance-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/load-balance-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ribbon-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ribbon-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/turbine-service/src/main/java" charset="UTF-8" />

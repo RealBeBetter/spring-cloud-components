@@ -1,15 +1,12 @@
 package com.example.ribbonservice.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * @author wei.song
  * @since 2023/4/11 16:59
  */
 @Data
-@NoArgsConstructor
 public class CommonResult<T> {
 
     private T data;
@@ -20,6 +17,9 @@ public class CommonResult<T> {
         this.data = data;
         this.message = message;
         this.code = code;
+    }
+
+    public CommonResult() {
     }
 
     public CommonResult(String message, Integer code) {

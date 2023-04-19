@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 @RequestMapping("/user")
 @SuppressWarnings("rawtypes")
-public class UserLoadBalanceController {
+public class UserRibbonController {
 
     private final RestTemplate restTemplate;
 

@@ -22,7 +22,7 @@
         <module>eureka-security-server</module>
         <module>eureka-server</module>
         <module>hystrix-service</module>
-        <module>load-balance-service</module>
+        <module>ribbon-service</module>
         <module>user-service</module>
     </modules>
 

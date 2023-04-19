@@ -7,15 +7,14 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * @author wei.song
- * @since 2023/4/12 10:29
+ * @since 2023/4/19 15:04
  */
 @Configuration
-public class LoadBalanceConfig {
+public class RibbonConfig {
 
     @Bean
     @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
-
 }
