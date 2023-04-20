@@ -12,12 +12,15 @@
         <module name="eureka-security-server" />
         <module name="config-client" />
         <module name="zuul-proxy" />
+        <module name="consul-config-client" />
         <module name="user-service" />
         <module name="eureka-server" />
         <module name="config-server" />
         <module name="eureka-client" />
+        <module name="consul-ribbon-service" />
         <module name="hystrix-dashboard" />
         <module name="ribbon-service" />
+        <module name="consul-user-service" />
         <module name="feign-service" />
         <module name="config-security-server" />
       </profile>
@@ -26,6 +29,9 @@
       <module name="config-client" target="1.8" />
       <module name="config-security-server" target="1.8" />
       <module name="config-server" target="1.8" />
+      <module name="consul-config-client" target="1.8" />
+      <module name="consul-ribbon-service" target="1.8" />
+      <module name="consul-user-service" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="eureka-client" target="1.8" />
       <module name="eureka-security-server" target="1.8" />

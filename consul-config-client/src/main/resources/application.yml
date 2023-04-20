@@ -1,0 +1,4 @@
+spring:
+  profiles:
+    # 表示启动的环境是 dev 环境
+    active: dev
