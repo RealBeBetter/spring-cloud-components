@@ -1,0 +1,24 @@
+server:
+  port: 8905
+spring:
+  application:
+    name: config-security-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/realBeBetter/springcloud-config.git
+          username: Real
+          password: 123456
+          # 开启启动时直接从 git 获取配置
+          clone-on-start: true
+  security:
+    # 配置用户名和密码
+    user:
+      name: Real
+      password: 123456
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
