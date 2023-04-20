@@ -1,0 +1,27 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      # 启用环境名称
+      profile: dev
+      # 分支名称
+      label: dev
+      # 配置文件名称
+      name: config
+      # 添加从注册中心获取配置中心地址的配置并去除了配置中心 uri 的配置
+      discovery:
+        enabled: true
+        service-id: config-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'refresh'

@@ -1,0 +1,19 @@
+server:
+  port: 8902
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git: # 配置存储配置信息的Git仓库
+          # 在子目录中搜索应用配置
+          search-paths: '{application}'
+          uri: https://gitee.com/realBeBetter/springcloud-config.git
+          username: Real
+          password: 123456
+          clone-on-start: true #开启启动时直接从git获取配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
