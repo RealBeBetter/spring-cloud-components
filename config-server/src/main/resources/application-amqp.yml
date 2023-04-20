@@ -1,0 +1,32 @@
+server:
+  port: 8904
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/realBeBetter/springcloud-config.git
+          username: Real
+          password: 123456
+          # 开启启动时直接从git获取配置
+          clone-on-start: true
+  # rabbitmq相关配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+
+management:
+  # 暴露bus刷新配置的端点
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
