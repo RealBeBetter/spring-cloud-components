@@ -10,6 +10,7 @@
         <module name="turbine-service" />
         <module name="hystrix-service" />
         <module name="eureka-security-server" />
+        <module name="api-config" />
         <module name="config-client" />
         <module name="zuul-proxy" />
         <module name="consul-config-client" />
@@ -26,6 +27,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api-config" target="1.8" />
       <module name="config-client" target="1.8" />
       <module name="config-security-server" target="1.8" />
       <module name="config-server" target="1.8" />
