@@ -10,7 +10,6 @@
         <module name="turbine-service" />
         <module name="hystrix-service" />
         <module name="eureka-security-server" />
-        <module name="api-config" />
         <module name="config-client" />
         <module name="zuul-proxy" />
         <module name="consul-config-client" />
