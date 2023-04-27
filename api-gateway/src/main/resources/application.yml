@@ -15,6 +15,13 @@ spring:
           predicates:
             - After=2019-09-24T16:30:00+08:00[Asia/Shanghai]
         - id: before_route
-            uri: ${service-url.user-service}
-            predicates:
-              - Before=2019-09-24T16:30:00+08:00[Asia/Shanghai]
+          uri: ${service-url.user-service}
+          predicates:
+            - Before=2019-09-24T16:30:00+08:00[Asia/Shanghai]
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
