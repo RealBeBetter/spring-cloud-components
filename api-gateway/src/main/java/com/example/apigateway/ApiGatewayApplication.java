@@ -1,17 +1,19 @@
-package com.example.apiconfig;
+package com.example.apigateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author Real
  * @date 2023/04/21 19:52
  */
+@EnableDiscoveryClient
 @SpringBootApplication
-public class ApiConfigApplication {
+public class ApiGatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ApiConfigApplication.class, args);
+        SpringApplication.run(ApiGatewayApplication.class, args);
     }
 
 }

@@ -19,6 +19,7 @@
         <module name="eureka-client" />
         <module name="consul-ribbon-service" />
         <module name="hystrix-dashboard" />
+        <module name="api-gateway" />
         <module name="ribbon-service" />
         <module name="consul-user-service" />
         <module name="feign-service" />
@@ -26,7 +27,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="api-config" target="1.8" />
+      <module name="api-gateway" target="1.8" />
       <module name="config-client" target="1.8" />
       <module name="config-security-server" target="1.8" />
       <module name="config-server" target="1.8" />
