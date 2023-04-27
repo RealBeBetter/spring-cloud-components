@@ -1,9 +1,9 @@
 package com.example.apigateway.controller;
 
+import com.google.common.collect.Maps;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -15,7 +15,7 @@ public class FallbackController {
 
     @GetMapping("/fallback")
     public Object fallback() {
-        Map<String, Object> result = new HashMap<>();
+        Map<String, Object> result = Maps.newHashMap();
         result.put("data", null);
         result.put("message", "Get request fallback!");
         result.put("code", 500);
