@@ -1,12 +1,17 @@
 package com.example.userservice.controller;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.example.userservice.entity.CommonResult;
 import com.example.userservice.entity.User;
 import com.example.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -32,6 +37,16 @@ public class UserController {
     public CommonResult<User> getUser(@PathVariable Long id) {
         User user = userService.getUser(id);
         log.info("根据id获取用户信息，用户名称为：{}", user.getUsername());
+        ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        if (ObjectUtil.isNull(servletRequestAttributes)) {
+            return new CommonResult<>(user);
+        }
+
+        HttpServletRequest request = servletRequestAttributes.getRequest();
+        String instanceId = request.getHeader("X-InstanceId");
+        if (StringUtils.isNotEmpty(instanceId)) {
+            log.info("获取到自定义请求头:X-InstanceId={}", instanceId);
+        }
         return new CommonResult<>(user);
     }
 
