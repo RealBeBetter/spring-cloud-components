@@ -28,6 +28,7 @@
         <option value="$PROJECT_DIR$/nacos-loadbalancer-service/pom.xml" />
         <option value="$PROJECT_DIR$/nacos-user-service/pom.xml" />
         <option value="$PROJECT_DIR$/loadbalancer-service/pom.xml" />
+        <option value="$PROJECT_DIR$/nacos-ribbon-service/pom.xml" />
       </list>
     </option>
   </component>
