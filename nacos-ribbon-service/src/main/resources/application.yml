@@ -2,11 +2,11 @@ server:
   port: 9701
 spring:
   application:
-    name: nacos-service
+    name: nacos-ribbon-service
   cloud:
     nacos:
       discovery:
-        namespace: public
-        password: nacos
-        server-addr: mse-6d50f4f0-p.nacos-ans.mse.aliyuncs.com:8848
-        username: nacos
+        server-addr: localhost:8848
+
+service-url:
+  nacos-user-service: http://nacos-user-service
