@@ -46,7 +46,7 @@
       <module name="hystrix-service" target="1.8" />
       <module name="load-balance-service" target="1.8" />
       <module name="loadbalancer-service" target="1.8" />
-      <module name="nacos-ribbon-service" target="1.5" />
+      <module name="nacos-ribbon-service" target="1.8" />
       <module name="nacos-user-service" target="1.8" />
       <module name="ribbon-service" target="1.8" />
       <module name="spring-cloud-components" target="1.8" />
