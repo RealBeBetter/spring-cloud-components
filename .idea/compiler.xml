@@ -18,6 +18,7 @@
         <module name="loadbalancer-service" />
         <module name="config-server" />
         <module name="eureka-client" />
+        <module name="nacos-config-client" />
         <module name="consul-ribbon-service" />
         <module name="nacos-user-service" />
         <module name="hystrix-dashboard" />
@@ -46,6 +47,7 @@
       <module name="hystrix-service" target="1.8" />
       <module name="load-balance-service" target="1.8" />
       <module name="loadbalancer-service" target="1.8" />
+      <module name="nacos-config-client" target="1.8" />
       <module name="nacos-ribbon-service" target="1.8" />
       <module name="nacos-user-service" target="1.8" />
       <module name="ribbon-service" target="1.8" />
