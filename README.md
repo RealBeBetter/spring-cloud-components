@@ -1,6 +1,51 @@
 ### 项目描述
 
-Spring Cloud Netflix Component
+Spring Cloud Netflix / Alibaba Component
+
+#### 项目依赖版本
+
+```xml
+<properties>
+    <java.version>1.8</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
+    <spring-cloud-alibaba.version>2.2.10-RC1</spring-cloud-alibaba.version>
+    <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
+</properties>
+
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>${spring-cloud.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>${spring-boot.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+            <version>${spring-cloud-alibaba.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+```
+
+#### 项目组件版本
+
+此处参考 Spring Cloud Alibaba 规定的组件依赖版本对照关系。
+
+![image-20230518005348043](https://cdn.staticaly.com/gh/RealBeBetter/image@master/img/202305180053156.png)
 
 #### Eureka 常用配置
 
@@ -51,11 +96,10 @@ user-service:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #修改负载均衡算法
 ```
 
-> 因为 Ribbon 在新版本中已经去除，使用 load-balancer 进行替代，参考：https://blog.csdn.net/qq_39363204/article/details/124357014
+> 因为 Ribbon 在新版本中已经去除，使用 load-balancer 进行替代，参考：
+> https://blog.csdn.net/qq_39363204/article/details/124357014
 
-#### Hystrix
-
-**常用配置**
+#### Hystrix 常用配置
 
 ```yaml
 hystrix:
