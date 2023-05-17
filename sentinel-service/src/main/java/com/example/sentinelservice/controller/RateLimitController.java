@@ -3,6 +3,7 @@ package com.example.sentinelservice.controller;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.example.sentinelservice.entity.CommonResult;
+import com.example.sentinelservice.handler.CustomBlockHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,6 +37,16 @@ public class RateLimitController {
     @SentinelResource(value = "byUrl", blockHandler = "handleException")
     public CommonResult byUrl() {
         return new CommonResult("按url限流", 200);
+    }
+
+    /**
+     * 自定义通用的限流处理逻辑
+     */
+    @GetMapping("/customBlockHandler")
+    @SentinelResource(value = "customBlockHandler", blockHandler = "handleException",
+            blockHandlerClass = CustomBlockHandler.class)
+    public CommonResult blockHandler() {
+        return new CommonResult("限流成功", 200);
     }
 
     public CommonResult handleException(BlockException exception) {
