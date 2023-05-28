@@ -7,28 +7,31 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="seata-account-service" />
+        <module name="config-client" />
+        <module name="zuul-proxy" />
+        <module name="user-service" />
+        <module name="eureka-server" />
+        <module name="seata-storage-service" />
+        <module name="consul-ribbon-service" />
+        <module name="nacos-user-service" />
+        <module name="hystrix-dashboard" />
+        <module name="ribbon-service" />
+        <module name="sentinel-service" />
+        <module name="consul-user-service" />
+        <module name="nacos-ribbon-service" />
+        <module name="seata-order-service" />
         <module name="turbine-service" />
         <module name="hystrix-service" />
         <module name="eureka-security-server" />
-        <module name="config-client" />
-        <module name="zuul-proxy" />
         <module name="consul-config-client" />
-        <module name="user-service" />
-        <module name="eureka-server" />
         <module name="loadbalancer-service" />
         <module name="config-server" />
         <module name="eureka-client" />
         <module name="nacos-config-client" />
-        <module name="consul-ribbon-service" />
-        <module name="nacos-user-service" />
-        <module name="hystrix-dashboard" />
         <module name="api-gateway" />
-        <module name="ribbon-service" />
-        <module name="sentinel-service" />
-        <module name="consul-user-service" />
         <module name="feign-service" />
         <module name="config-security-server" />
-        <module name="nacos-ribbon-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -52,6 +55,9 @@
       <module name="nacos-ribbon-service" target="1.8" />
       <module name="nacos-user-service" target="1.8" />
       <module name="ribbon-service" target="1.8" />
+      <module name="seata-account-service" target="1.8" />
+      <module name="seata-order-service" target="1.8" />
+      <module name="seata-storage-service" target="1.8" />
       <module name="sentinel-service" target="1.8" />
       <module name="spring-cloud-components" target="1.8" />
       <module name="turbine-service" target="1.8" />
