@@ -13,7 +13,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @EnableFeignClients
 @EnableDiscoveryClient
-@MapperScan({"com.example.seatastorageservice.mapper.StorageMapper"})
+@MapperScan({"com.example.seatastorageservice.mapper"})
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class SeataStorageServiceApplication {
 
