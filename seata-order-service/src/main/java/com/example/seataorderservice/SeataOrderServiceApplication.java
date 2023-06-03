@@ -13,7 +13,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @EnableFeignClients
 @EnableDiscoveryClient
-@MapperScan({"com.example.seataaccountservice.mapper"})
+@MapperScan({"com.example.seataorderservice.mapper"})
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class SeataOrderServiceApplication {
 
