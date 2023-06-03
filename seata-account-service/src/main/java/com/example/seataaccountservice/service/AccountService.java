@@ -3,8 +3,6 @@ package com.example.seataaccountservice.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.seataaccountservice.entity.Account;
 
-import java.math.BigDecimal;
-
 /**
  * @author Real
  * @description 针对表【account】的数据库操作Service
@@ -18,6 +16,6 @@ public interface AccountService extends IService<Account> {
      * @param userId 用户id
      * @param money  金额
      */
-    void decrease(Long userId, BigDecimal money);
+    void decrease(Long userId, Long money);
 
 }

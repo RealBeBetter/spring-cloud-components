@@ -8,8 +8,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
-
 /**
  * @author Real
  * @description 针对表【account】的数据库操作Service实现
@@ -25,9 +23,12 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account>
 
     /**
      * 扣减账户余额
+     *
+     * @param userId 用户id
+     * @param money  钱
      */
     @Override
-    public void decrease(Long userId, BigDecimal money) {
+    public void decrease(Long userId, Long money) {
         log.info("------->account-service中扣减账户余额开始");
         //模拟超时异常，全局事务回滚
         try {
